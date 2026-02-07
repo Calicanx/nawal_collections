@@ -39,6 +39,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsCartOpen(true)}
+          className="cart-btn"
           style={{
             position: 'relative',
             background: 'none',
@@ -69,6 +70,63 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile Controls */}
+      <div className="mobile-controls" style={{ display: 'none', alignItems: 'center', gap: '15px' }}>
+        <button
+          onClick={() => setIsCartOpen(true)}
+          style={{ background: 'none', color: 'var(--color-emerald)', position: 'relative', padding: '5px' }}
+        >
+          <ShoppingBag size={24} />
+          {cartCount > 0 && (
+            <span style={{
+              position: 'absolute',
+              top: '-2px',
+              right: '-5px',
+              backgroundColor: 'var(--color-gold)',
+              color: 'var(--color-emerald)',
+              fontSize: '0.6rem',
+              fontWeight: 'bold',
+              width: '16px',
+              height: '16px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>{cartCount}</span>
+          )}
+        </button>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          style={{ background: 'none', color: 'var(--color-emerald)', padding: '5px' }}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu ${isOpen ? 'open' : ''}`} style={{
+        position: 'fixed',
+        top: '80px', // Below navbar
+        left: 0,
+        width: '100%',
+        height: 'calc(100vh - 80px)',
+        backgroundColor: 'var(--color-cream)',
+        zIndex: 999,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingTop: 'var(--space-xl)',
+        gap: 'var(--space-lg)',
+        transform: 'translateX(100%)',
+        transition: 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+      }}>
+        <Link to="/" className="mobile-nav-link" onClick={() => setIsOpen(false)}>Home</Link>
+        <Link to="/about" className="mobile-nav-link" onClick={() => setIsOpen(false)}>About Us</Link>
+        <Link to="/shop" className="mobile-nav-link" onClick={() => setIsOpen(false)}>Shop</Link>
+        <Link to="/admin" className="mobile-nav-link" onClick={() => setIsOpen(false)} style={{ fontSize: '0.8rem', opacity: 0.6 }}>Admin</Link>
+      </div>
+
       <style>{`
         .nav-link {
           font-family: var(--font-body);
@@ -90,12 +148,25 @@ const Navbar = () => {
         .nav-link:hover::after {
           width: 100%;
         }
-        .shop-btn:hover {
-          background-color: var(--color-emerald);
-          color: var(--color-cream);
+        
+        .mobile-nav-link {
+          font-family: var(--font-heading);
+          font-size: 2rem;
+          color: var(--color-emerald);
+          text-transform: uppercase;
+          letter-spacing: 2px;
         }
+
+        .mobile-menu.open {
+          transform: translateX(0);
+        }
+
         @media (max-width: 768px) {
+          .navbar {
+            padding: var(--space-sm) var(--space-md) !important;
+          }
           .desktop-menu { display: none !important; }
+          .mobile-controls { display: flex !important; }
         }
       `}</style>
     </nav>

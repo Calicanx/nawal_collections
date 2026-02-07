@@ -29,6 +29,13 @@ const Shop = () => {
 
     return (
         <div className="shop-page container" style={{ padding: 'var(--space-md) var(--space-sm) var(--space-xl)' }}>
+            <style>{`
+                @media (max-width: 768px) {
+                    .shop-page { padding-top: var(--space-sm) !important; }
+                    .filters { margin-bottom: var(--space-md) !important; gap: 8px !important; }
+                    .filters button { padding: 8px 16px !important; font-size: 0.85rem !important; }
+                }
+            `}</style>
             {/* Category Filter */}
             <div className="filters" style={{
                 display: 'flex',

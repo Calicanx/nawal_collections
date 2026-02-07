@@ -194,6 +194,16 @@ const Home = () => {
                         opacity: 1;
                         transform: translateY(0);
                     }
+
+                    @media (max-width: 768px) {
+                        .hero { height: 80vh !important; }
+                        .hero h1 { font-size: 3.5rem !important; }
+                        .hero p { font-size: 1rem !important; margin-bottom: 2rem !important; }
+                        .collection-card { height: 350px !important; }
+                        .collection-content h3 { font-size: 1.8rem !important; transform: translateY(0); }
+                        .collection-btn { opacity: 1; transform: translateY(0); font-size: 0.8rem; }
+                        section { padding: var(--space-lg) 0 !important; }
+                    }
                 `}</style>
             </section>
         </div>

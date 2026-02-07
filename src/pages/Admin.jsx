@@ -86,7 +86,15 @@ const Admin = () => {
     }
 
     return (
-        <div className="container" style={{ padding: 'var(--space-lg) var(--space-sm)' }}>
+        <div className="admin-page container" style={{ padding: 'var(--space-md) var(--space-sm) var(--space-xl)' }}>
+            <style>{`
+                @media (max-width: 768px) {
+                    .admin-page { padding: var(--space-sm) !important; }
+                    .admin-page h1 { font-size: 2rem !important; margin-bottom: var(--space-sm) !important; }
+                    .admin-page h3 { font-size: 1.2rem !important; }
+                    .admin-page form { grid-template-columns: 1fr !important; }
+                }
+            `}</style>
             <h1 style={{ marginBottom: 'var(--space-md)' }}>Admin Dashboard</h1>
 
             {/* Add Product Form */}
