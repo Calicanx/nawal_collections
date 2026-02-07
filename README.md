@@ -1,16 +1,68 @@
-# React + Vite
+# Nawal Collection - Premium E-commerce Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nawal Collection is a high-end, React-based e-commerce platform curated for the modern woman who appreciates tradition and luxury. The site specializes in Deras, Jewellery, and Hijabs, offering a seamless and visually stunning shopping experience with direct WhatsApp integration for sales.
 
-Currently, two official plugins are available:
+![Nawal Collection Hero](https://images.unsplash.com/photo-1770371047764-392dea0f5283?q=80&w=1200&auto=format&fit=crop)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **💎 Premium UI/UX**: Emerald, gold, and cream aesthetics with smooth animations and interactive collections.
+- **🛍️ Integrated Shopping Bag**: Multi-item cart system allowing customers to build their order before checkout.
+- **📱 WhatsApp Checkout**: One-click checkout that generates a detailed order message for the seller.
+- **🛠️ Admin Dashboard**: Secure administrative area to manage the store's inventory (Add/Delete products).
+- **🚀 Responsive Design**: Optimized for a flawless experience across desktop, tablet, and mobile devices.
+- **💬 Floating Contact**: Quick-access floating WhatsApp button for instant customer support.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Routing**: [React Router](https://reactrouter.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management**: React Context API
+- **Styling**: Modern Vanilla CSS with CSS Variables
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd nawal-collection
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### 🔐 Admin Access
+
+The administrative dashboard is located at `/admin`.
+- **Username**: `admin`
+- **Password**: `admin`
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/          # Reusable UI components (Navbar, Cart, ProductCard)
+├── context/             # Global state (CartContext, ProductContext)
+├── pages/               # Main page components (Home, Shop, Admin)
+├── styles/              # Global CSS and Animations
+└── App.jsx              # Main application entry and routing
+```
+
+## 📜 License
+
+This project is developed for Nawal Collection. All rights reserved.
