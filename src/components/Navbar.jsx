@@ -104,29 +104,37 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`mobile-menu ${isOpen ? 'open' : ''}`} style={{
+      <div style={{
         position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
         height: '100vh',
-        backgroundColor: 'rgba(249, 249, 245, 0.9)', // Semi-transparent cream
-        backdropFilter: 'blur(15px)', // Glassmorphism
-        zIndex: 2000, // Above everything
+        backgroundColor: 'rgba(249, 249, 245, 0.98)', // Less transparent for better readability
+        backdropFilter: 'blur(15px)',
+        zIndex: 2000,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         gap: 'var(--space-lg)',
-        transform: 'translateY(-100%)', // Slide from top instead of side
-        opacity: 0,
+        transform: isOpen ? 'translateY(0)' : 'translateY(-100%)',
+        opacity: isOpen ? 1 : 0,
         transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-        pointerEvents: isOpen ? 'auto' : 'none'
+        pointerEvents: isOpen ? 'auto' : 'none',
+        visibility: isOpen ? 'visible' : 'hidden' // Ensure it's hidden when closed
       }}>
         {/* Close button inside mobile menu since it covers the navbar */}
         <button
           onClick={() => setIsOpen(false)}
-          style={{ position: 'absolute', top: '30px', right: '30px', background: 'none', color: 'var(--color-emerald)' }}
+          style={{
+            position: 'absolute',
+            top: '30px',
+            right: '30px',
+            background: 'none',
+            color: 'var(--color-emerald)',
+            cursor: 'pointer'
+          }}
         >
           <X size={32} />
         </button>
@@ -168,11 +176,6 @@ const Navbar = () => {
         }
         .mobile-nav-link:hover {
           color: var(--color-gold);
-        }
-
-        .mobile-menu.open {
-          transform: translateY(0);
-          opacity: 1;
         }
 
         @media (max-width: 768px) {
